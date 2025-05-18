@@ -104,10 +104,11 @@
   .quarterly-calendar {
     width: 85%;
     padding: 10px;
+    margin-bottom: 50px;
   }
 
   .calendar-header h2 {
-    font-size: 14px;
+    font-size: 13px;
   }
 
   .calendar-grid {
@@ -117,7 +118,7 @@
 
   .cell {
     min-height: 10px;
-    font-size: 10px;
+    font-size: 11px;
   }
 
   .tooltip {
