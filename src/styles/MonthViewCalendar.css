@@ -1,0 +1,127 @@
+.monthly-calendar.compact {
+  width: 50%;
+  max-width: 1000px;
+  margin: 10px auto;
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
+}
+.monthly-calendar {
+  width: 80%;
+  max-width: 1000px;
+  margin: 10px auto;
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.calendar-header h2 {
+  font-size: 16px;
+  margin: 0 auto;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 3px;
+}
+
+.calendar-grid.headers {
+  font-weight: bold;
+  background-color: #e8ecf1;
+  border-radius: 5px 5px 0 0;
+  font-size: 13px;
+}
+
+.cell.compact {
+  min-height: 40px;
+  padding: 6px;
+  font-size: 12px;
+  border: 1px solid #d1d5db;
+  background-color: #fafafa;
+  border-radius: 5px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cell:hover {
+  background-color: #f0f9ff;
+}
+
+.row-lightgreen .cell {
+  background-color: lightgreen !important;
+  color: #1b4d3e;
+}
+
+.row-darkgreen .cell {
+  background-color: #2e7d32 !important;
+  color: white;
+}
+
+.holiday-dot {
+  width: 6px;
+  height: 6px;
+  background-color: red;
+  border-radius: 50%;
+  margin-top: 4px;
+  align-self: center;
+}
+
+.tooltip-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip {
+  position: absolute;
+  top: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #111;
+  color: #fff;
+  padding: 3px 6px;
+  font-size: 11px;
+  border-radius: 3px;
+  white-space: nowrap;
+  z-index: 999;
+  box-shadow: 0 0 6px rgba(0,0,0,0.2);
+}
+
+
+@media (max-width: 768px) {
+  .monthly-calendar,
+  .monthly-calendar.compact {
+    width: 95%;
+    padding: 10px;
+  }
+
+  .calendar-header h2 {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .calendar-grid {
+    grid-template-columns: repeat(7, 1fr);
+    font-size: 11px;
+  }
+
+  .cell {
+    min-height: 45px;
+    font-size: 11px;
+  }
+
+  .tooltip {
+    font-size: 10px;
+  }
+}

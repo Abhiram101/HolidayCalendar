@@ -1,0 +1,165 @@
+/* Overall Page Layout */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f3f4f6;
+  color: #333;
+}
+
+h1, h2 {
+  text-align: center;
+  margin-top: 20px;
+  color: #2c3e50;
+}
+
+/* App Wrapper */
+
+.calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.calendar-header h2 {
+  margin: 0;
+  font-size: 16px;
+  flex: 1;
+  text-align: center;
+}
+
+.calendar {
+  width: 80%;
+  max-width: 95%;
+  margin: 20px auto;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Calendar Header Row */
+.calendar-grid.headers {
+  font-weight: bold;
+  background-color: #e8ecf1;
+  border-radius: 5px 5px 0 0;
+}
+
+/* Calendar Grid */
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  margin-bottom: 5px;
+}
+
+/* Calendar Cell */
+.cell {
+  min-height: 20px;
+  padding: 8px;
+  border: 1px solid #d1d5db;
+  background-color: #fafafa;
+  position: relative;
+  border-radius: 6px;
+  font-size: 11px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Hover Highlight */
+.cell:hover {
+  background-color: #f0f9ff;
+}
+
+/* Highlight Row Colors */
+.row-lightgreen .cell {
+  background-color: lightgreen !important;
+  color: #1b4d3e;
+}
+
+.row-darkgreen .cell {
+  background-color: #2e7d32 !important;
+  color: white;
+}
+
+/* Holiday Dot + Tooltip */
+.holiday-dot {
+  width: 8px;
+  height: 8px;
+  background-color: red;
+  border-radius: 50%;
+  margin-top: 6px;
+  align-self: center;
+}
+
+.tooltip-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #111;
+  color: #fff;
+  padding: 5px 8px;
+  font-size: 12px;
+  border-radius: 4px;
+  white-space: nowrap;
+  z-index: 999;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+}
+
+/* Toggle Buttons */
+button {
+  padding: 10px 16px;
+  margin: 10px;
+  font-size: 14px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+/* Dropdown Selector */
+select {
+  padding: 10px 12px;
+  font-size: 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background-color: white;
+  cursor: pointer;
+  margin: 10px 10px;
+}
+
+
+@media (max-width: 768px) {
+  .calendar {
+    width: 95%;
+    padding: 10px;
+  }
+
+  button {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+
+  .calendar-header h2 {
+    font-size: 14px;
+  }
+
+  select
+  {
+    margin: 10px 0px;
+  }
+}
