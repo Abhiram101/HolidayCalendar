@@ -39,9 +39,9 @@ const QuarterView = ({ selectedCountry }) => {
         </h2>
         <button onClick={goToNextQuarter}>&gt;</button>
       </div>
-      <div style={{ display: "flex", gap: "10px", justifyContent: "center" }}>
+      <div className="quarterly-view-grid">
         {monthsToShow.map((month, idx) => (
-          <div key={idx} style={{ flex: 1 }}>
+          <div key={idx} className="month-grid">
             <MonthView
               selectedCountry={selectedCountry}
               overrideMonth={month % 12}
