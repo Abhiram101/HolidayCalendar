@@ -5,12 +5,12 @@
   align-items: center; 
   background: #ffffff;
   background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(237, 227, 168, 1) 98%);
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .home-title {
   font-size: 34px;
-  margin: 40px 0px;
+  margin-top: 40px;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -66,11 +66,6 @@
 
 
 @media (max-width: 768px) {
-  
-  .home-container
-  {
-    height: 100%;
-  }
   
   .home-title {
     font-size: 18px;
