@@ -4,7 +4,7 @@ import MonthView from "./MonthView";
 import { getMonthName } from "../Utility/CalendarUtils.js";
 import "..//styles/QuarterViewCalendar.css";
 
-const QuarterView = ({ selectedCountry }) => {
+const QuarterView = ({ selectedCountry, holidayMode = false }) => {
   const today = new Date();
   const [baseMonth, setBaseMonth] = useState(today.getMonth()); // 0-11
   const [year, setYear] = useState(today.getFullYear());
@@ -47,6 +47,7 @@ const QuarterView = ({ selectedCountry }) => {
               overrideMonth={month % 12}
               overrideYear={year + Math.floor(month / 12)}
               isQuarterly
+              holidayMode={holidayMode}
             />
           </div>
         ))}

@@ -9,6 +9,7 @@ const Home = () => {
   const [selectedCountry, setSelectedCountry] = useState(null);
   const { countries, loading } = useContext(CountryContext);
   const [viewMode, setViewMode] = useState("monthly");
+  const [holidayMode, setHolidayMode] = useState(false);
 
   useEffect(() => {
     if (!loading && countries.length > 0 && !selectedCountry) {
@@ -34,13 +35,22 @@ const Home = () => {
           <button onClick={() => setViewMode("quarterly")}>
             Quarterly View{" "}
           </button>
+          <button onClick={() => setHolidayMode((prev) => !prev)}>
+            {holidayMode ? "Normal Mode" : "Holiday Mode"}
+          </button>
         </div>
       </div>
 
       {viewMode === "monthly" ? (
-        <MonthView selectedCountry={selectedCountry} />
+        <MonthView
+          selectedCountry={selectedCountry}
+          holidayMode={holidayMode}
+        />
       ) : (
-        <QuarterView selectedCountry={selectedCountry} />
+        <QuarterView
+          selectedCountry={selectedCountry}
+          holidayMode={holidayMode}
+        />
       )}
     </div>
   );

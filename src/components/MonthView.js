@@ -13,6 +13,7 @@ const MonthView = ({
   overrideMonth,
   overrideYear,
   isQuarterly = false,
+  holidayMode = false,
 }) => {
   const today = new Date();
   const [month, setMonth] = useState(overrideMonth ?? today.getMonth());
@@ -102,6 +103,10 @@ const MonthView = ({
 
       {weeks.map((week, i) => {
         const { colorClass, weekDays } = getHolidaysByWeek(week);
+
+        // Skip row if holidayMode is on and week has no holidays
+        if (holidayMode && !colorClass) return null;
+
         return (
           <div className={`calendar-grid ${colorClass}`} key={i}>
             {weekDays.map((day, idx) => (
